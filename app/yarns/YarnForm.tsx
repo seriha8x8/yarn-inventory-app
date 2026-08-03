@@ -9,7 +9,7 @@ import UpgradeModal from "@/components/UpgradeModal";
 const initialState: YarnFormState = { error: null };
 
 const fieldClass =
-  "rounded-md border border-zinc-300 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900";
+  "rounded-md border border-stone-300 px-3 py-2 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:ring-rose-900/40";
 
 export default function YarnForm({
   yarn,
@@ -101,7 +101,7 @@ export default function YarnForm({
         <button
           type="submit"
           disabled={pending}
-          className="rounded-md bg-zinc-900 px-4 py-2 font-medium text-white disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900"
+          className="rounded-md bg-rose-600 px-4 py-2 font-medium text-white hover:bg-rose-700 disabled:opacity-50"
         >
           {pending ? "保存中..." : "保存"}
         </button>

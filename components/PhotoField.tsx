@@ -33,9 +33,9 @@ export default function PhotoField({
           <img
             src={existingPhotoUrl}
             alt=""
-            className="h-24 w-24 rounded-md border border-zinc-200 object-cover dark:border-zinc-800"
+            className="h-24 w-24 rounded-md border border-stone-200 object-cover dark:border-stone-800"
           />
-          <label className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
+          <label className="flex items-center gap-2 text-stone-600 dark:text-stone-400">
             <input
               type="checkbox"
               name="remove_photo"
@@ -58,7 +58,7 @@ export default function PhotoField({
         <img
           src={preview}
           alt=""
-          className="h-24 w-24 rounded-md border border-zinc-200 object-cover dark:border-zinc-800"
+          className="h-24 w-24 rounded-md border border-stone-200 object-cover dark:border-stone-800"
         />
       )}
     </div>

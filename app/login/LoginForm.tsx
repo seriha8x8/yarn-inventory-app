@@ -21,14 +21,14 @@ export default function LoginForm() {
   const pending = mode === "signin" ? signInPending : signUpPending;
 
   return (
-    <div className="mx-auto flex w-full max-w-sm flex-col gap-6 rounded-lg border border-zinc-200 p-8 dark:border-zinc-800">
+    <div className="mx-auto flex w-full max-w-sm flex-col gap-6 rounded-lg border border-stone-200 p-8 dark:border-stone-800">
       <div className="flex gap-2 text-sm">
         <button
           type="button"
           className={`flex-1 rounded-md px-3 py-2 font-medium ${
             mode === "signin"
-              ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-              : "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+              ? "bg-rose-600 text-white"
+              : "bg-violet-50 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300"
           }`}
           onClick={() => setMode("signin")}
         >
@@ -38,8 +38,8 @@ export default function LoginForm() {
           type="button"
           className={`flex-1 rounded-md px-3 py-2 font-medium ${
             mode === "signup"
-              ? "bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900"
-              : "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+              ? "bg-rose-600 text-white"
+              : "bg-violet-50 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300"
           }`}
           onClick={() => setMode("signup")}
         >
@@ -55,7 +55,7 @@ export default function LoginForm() {
             name="email"
             required
             autoComplete="email"
-            className="rounded-md border border-zinc-300 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-md border border-stone-300 px-3 py-2 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:ring-rose-900/40"
           />
         </label>
         <label className="flex flex-col gap-1 text-sm">
@@ -66,7 +66,7 @@ export default function LoginForm() {
             required
             minLength={6}
             autoComplete={mode === "signin" ? "current-password" : "new-password"}
-            className="rounded-md border border-zinc-300 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-900"
+            className="rounded-md border border-stone-300 px-3 py-2 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:ring-rose-900/40"
           />
         </label>
 
@@ -82,7 +82,7 @@ export default function LoginForm() {
         <button
           type="submit"
           disabled={pending}
-          className="rounded-md bg-zinc-900 px-4 py-2 font-medium text-white disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900"
+          className="rounded-md bg-rose-600 px-4 py-2 font-medium text-white hover:bg-rose-700 disabled:opacity-50"
         >
           {pending
             ? "処理中..."

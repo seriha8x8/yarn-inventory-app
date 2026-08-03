@@ -15,17 +15,17 @@ export default function UpgradeModal({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm rounded-lg bg-white p-6 dark:bg-zinc-900"
+        className="w-full max-w-sm rounded-lg bg-white p-6 dark:bg-stone-900"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-lg font-semibold">有料プランは準備中です</h2>
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
           無料プランでは写真は1枚までです。2枚目以降の写真を保存するには有料プランへのアップグレードが必要です。有料プランは現在準備中です。
         </p>
         <button
           type="button"
           onClick={onClose}
-          className="mt-4 w-full rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white dark:bg-zinc-100 dark:text-zinc-900"
+          className="mt-4 w-full rounded-md bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700"
         >
           閉じる
         </button>
