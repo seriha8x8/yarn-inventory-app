@@ -151,7 +151,7 @@ export default async function YarnsPage({
         </label>
         <button
           type="submit"
-          className="rounded-md border border-pink-300 px-3 py-1.5 text-sm text-pink-700 hover:bg-pink-50 dark:border-pink-800 dark:text-pink-300 dark:hover:bg-pink-950/30"
+          className="rounded-md border border-pink-300 px-3 py-1.5 text-sm text-stone-700 hover:bg-pink-50 dark:border-pink-800 dark:text-stone-300 dark:hover:bg-pink-950/30"
         >
           絞り込む
         </button>
@@ -183,7 +183,7 @@ export default async function YarnsPage({
                     className="h-32 w-full rounded-md object-cover"
                   />
                 ) : (
-                  <div className="flex h-32 w-full items-center justify-center rounded-md bg-pink-50 text-xs text-pink-400 dark:bg-pink-950/30 dark:text-pink-500">
+                  <div className="flex h-32 w-full items-center justify-center rounded-md bg-pink-50 text-xs text-stone-400 dark:bg-pink-950/30 dark:text-stone-400">
                     写真なし
                   </div>
                 )}
@@ -194,7 +194,7 @@ export default async function YarnsPage({
                     .map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full bg-pink-50 px-2 py-0.5 text-xs text-pink-700 dark:bg-pink-950/40 dark:text-pink-300"
+                        className="rounded-full bg-pink-100 px-2 py-0.5 text-xs text-stone-700 dark:bg-pink-950/40 dark:text-stone-300"
                       >
                         {tag}
                       </span>
