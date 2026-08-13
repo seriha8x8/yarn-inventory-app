@@ -28,7 +28,7 @@ export default function LoginForm() {
           className={`flex-1 rounded-md px-3 py-2 font-medium ${
             mode === "signin"
               ? "bg-rose-600 text-white"
-              : "bg-violet-50 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300"
+              : "bg-pink-50 text-pink-700 dark:bg-pink-950/40 dark:text-pink-300"
           }`}
           onClick={() => setMode("signin")}
         >
@@ -39,7 +39,7 @@ export default function LoginForm() {
           className={`flex-1 rounded-md px-3 py-2 font-medium ${
             mode === "signup"
               ? "bg-rose-600 text-white"
-              : "bg-violet-50 text-violet-700 dark:bg-violet-950/40 dark:text-violet-300"
+              : "bg-pink-50 text-pink-700 dark:bg-pink-950/40 dark:text-pink-300"
           }`}
           onClick={() => setMode("signup")}
         >

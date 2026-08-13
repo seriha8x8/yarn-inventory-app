@@ -54,7 +54,7 @@ export default async function YarnDetailPage({
       <YarnForm yarn={yarn} photoUrl={photoUrl} action={updateYarnWithId} />
 
       <section className="flex flex-col gap-3">
-        <h2 className="border-l-4 border-violet-300 pl-3 text-lg font-semibold">
+        <h2 className="border-l-4 border-pink-300 pl-3 text-lg font-semibold">
           この毛糸を使った作品メモ
         </h2>
         {!usages || usages.length === 0 ? (

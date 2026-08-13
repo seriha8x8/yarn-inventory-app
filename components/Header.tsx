@@ -12,7 +12,7 @@ export default async function Header() {
 
   return (
     <header className="border-b border-stone-200 dark:border-stone-800">
-      <div className="h-1 bg-gradient-to-r from-rose-400 via-rose-300 to-violet-300" />
+      <div className="h-1 bg-gradient-to-r from-rose-400 via-rose-300 to-pink-300" />
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
         <nav className="flex items-center gap-4 text-sm font-medium">
           <Link href="/yarns" className="hover:text-rose-600 dark:hover:text-rose-400">

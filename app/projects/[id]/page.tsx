@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({
       />
 
       <section className="flex flex-col gap-3">
-        <h2 className="border-l-4 border-violet-300 pl-3 text-lg font-semibold">
+        <h2 className="border-l-4 border-pink-300 pl-3 text-lg font-semibold">
           使用した毛糸
         </h2>
         {!usages || usages.length === 0 ? (

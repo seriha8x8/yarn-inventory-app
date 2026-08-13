@@ -46,13 +46,13 @@ export default async function ProjectsPage() {
                     className="h-32 w-full rounded-md object-cover"
                   />
                 ) : (
-                  <div className="flex h-32 w-full items-center justify-center rounded-md bg-violet-50 text-xs text-violet-400 dark:bg-violet-950/30 dark:text-violet-500">
+                  <div className="flex h-32 w-full items-center justify-center rounded-md bg-pink-50 text-xs text-pink-400 dark:bg-pink-950/30 dark:text-pink-500">
                     写真なし
                   </div>
                 )}
                 <span className="font-medium">{project.title}</span>
                 {project.made_on && (
-                  <span className="w-fit rounded-full bg-violet-50 px-2 py-0.5 text-xs text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">
+                  <span className="w-fit rounded-full bg-pink-50 px-2 py-0.5 text-xs text-pink-700 dark:bg-pink-950/40 dark:text-pink-300">
                     {project.made_on}
                   </span>
                 )}
