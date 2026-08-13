@@ -67,7 +67,9 @@ export default async function ProjectDetailPage({
       />
 
       <section className="flex flex-col gap-3">
-        <h2 className="text-lg font-semibold">使用した毛糸</h2>
+        <h2 className="border-l-4 border-violet-300 pl-3 text-lg font-semibold">
+          使用した毛糸
+        </h2>
         {!usages || usages.length === 0 ? (
           <p className="text-sm text-stone-500 dark:text-stone-400">
             使用した毛糸がありません。
@@ -78,13 +80,13 @@ export default async function ProjectDetailPage({
               <li key={usage.id}>
                 <Link
                   href={`/yarns/${usage.yarn?.id}`}
-                  className="flex items-center justify-between rounded-md border border-stone-200 px-4 py-3 hover:border-rose-200 hover:bg-rose-50/70 dark:border-stone-800 dark:hover:border-rose-900 dark:hover:bg-rose-950/20"
+                  className="flex items-center justify-between rounded-md border border-rose-100 px-4 py-3 hover:border-rose-300 hover:bg-rose-50/70 dark:border-rose-950/60 dark:hover:border-rose-800 dark:hover:bg-rose-950/20"
                 >
                   <span>
                     {usage.yarn?.name}
                     {usage.yarn?.manufacturer ? ` (${usage.yarn.manufacturer})` : ""}
                   </span>
-                  <span className="text-sm text-stone-500 dark:text-stone-400">
+                  <span className="rounded-full bg-rose-50 px-2 py-0.5 text-xs font-medium text-rose-700 dark:bg-rose-950/40 dark:text-rose-300">
                     使用: {usage.used_count}玉
                   </span>
                 </Link>

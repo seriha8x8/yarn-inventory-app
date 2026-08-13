@@ -9,6 +9,8 @@ import { uploadPhoto, deletePhoto } from "@/lib/photos";
 export type YarnFormState = {
   error: string | null;
   upgradeRequired?: boolean;
+  success?: boolean;
+  createdName?: string;
 };
 
 function parseYarnFields(formData: FormData) {
@@ -51,7 +53,7 @@ export async function createYarn(
   }
 
   revalidatePath("/yarns");
-  redirect(`/yarns/${yarn.id}`);
+  return { error: null, success: true, createdName: fields.name };
 }
 
 export async function updateYarn(

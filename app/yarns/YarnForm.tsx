@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import Link from "next/link";
+import { useActionState, useEffect, useState } from "react";
 import type { Yarn } from "@/lib/types";
 import type { YarnFormState } from "./actions";
 import PhotoField from "@/components/PhotoField";
@@ -26,15 +27,37 @@ export default function YarnForm({
   const [state, formAction, pending] = useActionState(action, initialState);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [handledState, setHandledState] = useState(state);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [formKey, setFormKey] = useState(0);
 
   if (state !== handledState) {
     setHandledState(state);
     if (state.upgradeRequired) setUpgradeOpen(true);
+    if (state.success) {
+      setSuccessMessage(
+        `「${state.createdName}」を登録しました。続けて登録できます。`
+      );
+      setFormKey((k) => k + 1);
+    }
   }
+
+  useEffect(() => {
+    if (!successMessage) return;
+    const timer = setTimeout(() => setSuccessMessage(null), 5000);
+    return () => clearTimeout(timer);
+  }, [successMessage]);
 
   return (
     <>
-      <form action={formAction} className="flex max-w-lg flex-col gap-4">
+      {successMessage && (
+        <div className="mb-4 flex items-center justify-between gap-3 rounded-md border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 dark:border-rose-900 dark:bg-rose-950/30 dark:text-rose-300">
+          <span>{successMessage}</span>
+          <Link href="/yarns" className="whitespace-nowrap font-medium underline">
+            一覧を見る
+          </Link>
+        </div>
+      )}
+      <form key={formKey} action={formAction} className="flex max-w-lg flex-col gap-4">
         <label className="flex flex-col gap-1 text-sm">
           名前
           <input

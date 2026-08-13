@@ -15,7 +15,9 @@ export default async function ProjectsPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold">作品メモ一覧</h1>
+        <h1 className="border-l-4 border-rose-400 pl-3 text-xl font-semibold">
+          作品メモ一覧
+        </h1>
         <Link
           href="/projects/new"
           className="rounded-md bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700"
@@ -34,7 +36,7 @@ export default async function ProjectsPage() {
             <li key={project.id}>
               <Link
                 href={`/projects/${project.id}`}
-                className="flex flex-col gap-2 rounded-lg border border-stone-200 p-4 hover:border-rose-200 hover:bg-rose-50/70 dark:border-stone-800 dark:hover:border-rose-900 dark:hover:bg-rose-950/20"
+                className="flex flex-col gap-2 rounded-lg border border-rose-100 p-4 hover:border-rose-300 hover:bg-rose-50/70 dark:border-rose-950/60 dark:hover:border-rose-800 dark:hover:bg-rose-950/20"
               >
                 {project.photo_url ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -50,7 +52,7 @@ export default async function ProjectsPage() {
                 )}
                 <span className="font-medium">{project.title}</span>
                 {project.made_on && (
-                  <span className="text-sm text-stone-500 dark:text-stone-400">
+                  <span className="w-fit rounded-full bg-violet-50 px-2 py-0.5 text-xs text-violet-700 dark:bg-violet-950/40 dark:text-violet-300">
                     {project.made_on}
                   </span>
                 )}

@@ -10,6 +10,8 @@ import { uploadPhoto, deletePhoto } from "@/lib/photos";
 export type ProjectFormState = {
   error: string | null;
   upgradeRequired?: boolean;
+  success?: boolean;
+  createdTitle?: string;
 };
 
 type Selection = { yarn_id: string; used_count: number };
@@ -108,7 +110,7 @@ export async function createProject(
 
   revalidatePath("/projects");
   revalidatePath("/yarns");
-  redirect(`/projects/${project.id}`);
+  return { error: null, success: true, createdTitle: title };
 }
 
 export async function updateProject(

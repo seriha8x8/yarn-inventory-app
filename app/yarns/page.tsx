@@ -62,12 +62,14 @@ export default async function YarnsPage({
   };
 
   const selectClass =
-    "rounded-md border border-stone-300 px-2 py-1.5 text-sm dark:border-stone-700 dark:bg-stone-900";
+    "rounded-md border border-stone-300 px-2 py-1.5 text-sm focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-200 dark:border-stone-700 dark:bg-stone-900 dark:focus:ring-rose-900/40";
 
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold">毛糸一覧</h1>
+        <h1 className="border-l-4 border-rose-400 pl-3 text-xl font-semibold">
+          毛糸一覧
+        </h1>
         <Link
           href="/yarns/new"
           className="rounded-md bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700"
@@ -171,7 +173,7 @@ export default async function YarnsPage({
             <li key={yarn.id}>
               <Link
                 href={`/yarns/${yarn.id}`}
-                className="flex flex-col gap-2 rounded-lg border border-stone-200 p-4 hover:border-rose-200 hover:bg-rose-50/70 dark:border-stone-800 dark:hover:border-rose-900 dark:hover:bg-rose-950/20"
+                className="flex flex-col gap-2 rounded-lg border border-rose-100 p-4 hover:border-rose-300 hover:bg-rose-50/70 dark:border-rose-950/60 dark:hover:border-rose-800 dark:hover:bg-rose-950/20"
               >
                 {yarn.photo_url ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -186,12 +188,19 @@ export default async function YarnsPage({
                   </div>
                 )}
                 <span className="font-medium">{yarn.name}</span>
-                <span className="text-sm text-stone-500 dark:text-stone-400">
+                <div className="flex flex-wrap gap-1">
                   {[yarn.color, yarn.manufacturer, yarn.material, yarn.thickness]
                     .filter(Boolean)
-                    .join(" / ")}
-                </span>
-                <span className="text-sm text-stone-500 dark:text-stone-400">
+                    .map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-violet-50 px-2 py-0.5 text-xs text-violet-700 dark:bg-violet-950/40 dark:text-violet-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                </div>
+                <span className="w-fit rounded-full bg-rose-50 px-2 py-0.5 text-xs font-medium text-rose-700 dark:bg-rose-950/40 dark:text-rose-300">
                   在庫: {yarn.stock_count}玉
                 </span>
               </Link>
